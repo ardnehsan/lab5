@@ -1,0 +1,50 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.nav {
+  height: 50px;
+}
+
+
+.big_container {
+  margin: auto;
+  font-family: 'Bangers', cursive;
+  background-image: url("marvelwiki");
+  align-items: center;
+  display: flex;
+  background-repeat: no-repeat;
+  flex-direction: column;
+  background-size: 100% 600px;
+  background-position: center top;
+  width: 100%;
+
+}
+
+
+.list{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+}
+
+.photo img{
+  height: 70%;
+
+}
+
+.photo {
+  width: 100%;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.fixer {
+  height: 768px;
+
+}

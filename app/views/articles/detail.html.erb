@@ -1,0 +1,46 @@
+<h1><%= @article.title%></h1>
+
+<div class="photo">
+    <%= image_tag @article.photo_url%>
+</div>
+
+<p>
+  <%= @article.post%>
+</p>
+
+
+
+<div>
+
+<%= form_for @comment do |h| %>
+      <div class="form-group <%= 'has-error' if @comment.errors[:comment_text].any? %>">
+        <%= h.label :user_name%>
+        <%= h.text_field :comment_name%>
+
+        <%= h.label :comment%>
+        <%= h.text_area :comment_text%>
+
+        <% if @comment.errors[:comment_name].any? %>
+          <%= h.label :Leave_your_name!%>
+        <% elsif @comment.errors[:comment_text].any? %>
+          <%= h.label :Leave_a_comment!%>
+
+        <% end %>
+
+      </div>
+
+      <div>
+        <%= h.submit %>
+      </div>
+    <% end %>
+    <div class="">
+    <ul>
+      <% @article.comments.order("id desc").each do |comment| %>
+      <li>
+        <%= comment.comment_text %> - <%= comment.comment_name %> -
+        <span class="time"><%= distance_of_time_in_words comment.created_at, Time.now %></span>
+      </li>
+      <% end %>
+    </ul>
+    </div>
+</div>

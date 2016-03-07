@@ -1,0 +1,25 @@
+
+<h1>Hero Election</h1>
+
+<div class="well">
+  <div class="Addition">
+    <%= link_to 'New Hero', new_article_path, class: 'btn btn-default' %>
+  </div>
+</div>
+
+<% @article.each do |article| %>
+  <div class="list">
+  <div class="Hero">
+    <%= link_to article_path(id: article.id) do %>
+    <%= article.title%>
+    <%= link_to like_post_path(id: article.id), method: :post, class: 'btn btn-default' do %>
+      <i class = "glyphicon glyphicon-thumbs-up"></i>
+    <%= pluralize article.likes, 'likes'%>
+      <%end%>
+      <br>
+      </br>
+    <%end%>
+  </div>
+    </div>
+
+<%end%>
